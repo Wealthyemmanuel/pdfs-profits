@@ -1,0 +1,6 @@
+{
+  "name": "PDF Business Blueprint",
+  "description": "Learn how to build a profitable online business by creating and selling simple PDFs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
