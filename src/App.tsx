@@ -12,7 +12,10 @@ export default function App() {
   const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeZ6Y1-DQGGIVerYUiT5hvr7xOMDl9ZfCxb2rpm223FlM8lAg/formResponse";
 
   const handleSubmit = () => {
-    setIsSubmitted(true);
+    // Show success message after a slight delay to ensure the browser dispatches the form
+    setTimeout(() => {
+      setIsSubmitted(true);
+    }, 500);
   };
 
   return (
@@ -74,6 +77,7 @@ export default function App() {
 
         {/* Form Section */}
         <div className="bg-slate-50 p-8 rounded-lg border border-slate-200">
+          <iframe name="hidden_iframe" id="hidden_iframe" style={{ display: 'none' }}></iframe>
           {isSubmitted ? (
             <div className="text-center py-8">
               <p className="text-xl font-bold text-emerald-600">Thank you!</p>
@@ -89,7 +93,7 @@ export default function App() {
             <form 
               action={FORM_URL}
               method="POST"
-              target="_blank"
+              target="hidden_iframe"
               onSubmit={handleSubmit}
               className="space-y-6"
             >
